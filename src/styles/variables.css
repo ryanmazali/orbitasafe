@@ -1,0 +1,44 @@
+:root {
+    /* Brand */
+    --brand-primary: hsla(38, 92%, 50%, 1);
+    --brand-primary-light: hsla(38, 92%, 50%, 0.1);
+
+    /* Interface */
+    --interface-darkest: hsla(222, 47%, 6%, 1);
+    --interface-dark: hsla(222, 40%, 10%, 1);
+    --interface-base: hsla(222, 35%, 16%, 1);
+    --interface-light: hsla(222, 30%, 22%, 1);
+
+    --interface-border: hsla(213, 94%, 60%, 0.12);
+    --interface-disabled: hsla(222, 30%, 20%, 1);
+    --interface-shadow: hsla(222, 47%, 4%, 0.6);
+
+    --interface-info: hsla(213, 94%, 60%, 1);
+    --interface-success: hsla(142, 70%, 45%, 1);
+    --interface-warning: hsla(38, 92%, 50%, 1);
+    --interface-error: hsla(0, 72%, 55%, 1);
+
+    /* Texto */
+    --text-darkest: hsla(210, 40%, 98%, 1);
+    --text-dark: hsla(210, 30%, 88%, 1);
+    --text-base: hsla(210, 20%, 65%, 1);
+    --text-light: hsla(210, 15%, 42%, 1);
+
+    --interface-text-darkest: hsla(210, 40%, 98%, 1);
+    --interface-text-dark: hsla(210, 30%, 88%, 1);
+    --interface-text-base: hsla(210, 20%, 65%, 1);
+    --interface-text-light: hsla(210, 15%, 42%, 1);
+
+    --common-light: hsla(222, 40%, 12%, 1);
+    --common-dark: hsla(210, 40%, 98%, 1);
+
+    /* Spacing */
+    --spacing-2xlarge: 2rem;     /* 32px */
+    --spacing-xlarge: 1.5rem;    /* 24px */
+    --spacing-large: 1.25rem;    /* 20px */
+    --spacing-medium: 1.125rem;  /* 18px */
+    --spacing-base: 1rem;        /* 16px */
+    --spacing-small: .875rem;    /* 14px */
+    --spacing-xsmall: .75rem;    /* 12px */
+    --spacing-2xsmall: .625rem;  /* 10px */
+}

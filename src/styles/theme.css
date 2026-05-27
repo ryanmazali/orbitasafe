@@ -1,0 +1,32 @@
+@theme {
+    --color-brand-primary: var(--brand-primary);
+    --color-brand-primary-light: var(--brand-primary-light);
+
+    --color-interface-darkest: var(--interface-darkest);
+    --color-interface-dark: var(--interface-dark);
+    --color-interface-base: var(--interface-base);
+    --color-interface-light: var(--interface-light);
+    --color-interface-border: var(--interface-border);
+    --color-interface-disabled: var(--interface-disabled);
+    --color-interface-shadow: var(--interface-shadow);
+
+    --color-interface-info: var(--interface-info);
+    --color-interface-success: var(--interface-success);
+    --color-interface-warning: var(--interface-warning);
+    --color-interface-error: var(--interface-error);
+
+    --color-typography-darkest: var(--interface-text-darkest);
+    --color-typography-dark: var(--interface-text-dark);
+    --color-typography-base: var(--interface-text-base);
+    --color-typography-light: var(--interface-text-light);
+
+    --color-common-light: var(--common-light);
+    --color-common-dark: var(--common-dark);
+
+    --color-mix-interface-border-light: color-mix(in srgb, var(--interface-border), var(--color-common-light) 10%);
+    --color-mix-primary-dark: color-mix(in srgb, var(--brand-primary), var(--interface-darkest) 10%);
+    --color-mix-primary-light: color-mix(in srgb, var(--brand-primary), var(--color-common-light) 50%);
+
+    --font-display: "Orbitron", sans-serif;
+    --font-body: "Inter", sans-serif;
+}

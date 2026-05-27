@@ -1,0 +1,42 @@
+@import "./variables.css";
+@import "./theme.css";
+@import "tailwindcss";
+
+* {
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    line-height: 1.25;
+    font-family: var(--font-body);
+    font-weight: 400;
+    background-color: var(--interface-darkest);
+    color: var(--text-darkest);
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    margin: 0 auto;
+    width: 90%;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--interface-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--brand-primary);
+    border-radius: 3px;
+}
