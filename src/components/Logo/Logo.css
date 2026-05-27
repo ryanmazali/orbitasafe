@@ -1,0 +1,20 @@
+.logo {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--text-darkest);
+}
+
+.logo-icon {
+    width: 2rem;
+    height: 2rem;
+    color: var(--brand-primary);
+}
+
+.logo-safe {
+    color: var(--brand-primary);
+}
