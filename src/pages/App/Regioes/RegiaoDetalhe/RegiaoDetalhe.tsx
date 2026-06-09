@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router";
 import { ArrowLeft, RefreshCw, AlertTriangle } from "lucide-react";
+import earthSateliteBg from "../../../../assets/earth-satelite.jpg";
 import { getAlertasByRegiao } from "../../../../api/getAlertasByRegiao";
 import { postAnalisarRegiao } from "../../../../api/postAnalisarRegiao";
 import { Badge } from "../../../../components";
@@ -57,7 +58,25 @@ function RegiaoDetalhe() {
     const ultimoAlerta = alertas[0] ?? null;
 
     return (
-        <div className="w-[90%] max-w-[800px] mx-auto py-8">
+        <div
+            style={{
+                backgroundImage: `url(${earthSateliteBg})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                minHeight: "100vh",
+                position: "relative",
+            }}
+        >
+            <div
+                style={{
+                    position: "absolute",
+                    inset: 0,
+                    background: "linear-gradient(135deg, hsla(222, 47%, 6%, 0.93) 0%, hsla(222, 47%, 6%, 0.88) 50%, hsla(38, 92%, 50%, 0.05) 100%)",
+                    zIndex: 0,
+                }}
+            />
+        <div className="w-[90%] max-w-[800px] mx-auto py-8" style={{ position: "relative", zIndex: 1 }}>
             {/* Cabeçalho */}
             <div className="flex items-center gap-3 mb-6">
                 <button
@@ -221,6 +240,7 @@ function RegiaoDetalhe() {
                     </button>
                 </div>
             )}
+        </div>
         </div>
     );
 }

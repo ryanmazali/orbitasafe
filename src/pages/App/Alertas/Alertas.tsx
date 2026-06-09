@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Bell, CheckCheck } from "lucide-react";
+import earthSateliteBg from "../../../assets/earth-satelite.jpg";
 import { useAuth } from "../../../context/AuthContext";
 import { getNotificacoesByUsuario } from "../../../api/getNotificacoesByUsuario";
 import { putMarcarNotificacaoLida } from "../../../api/putMarcarNotificacaoLida";
@@ -45,7 +46,25 @@ function Alertas() {
     const lidas = notificacoes.filter((n) => n.estadoNotif === "LIDA");
 
     return (
-        <div className="w-[90%] max-w-[800px] mx-auto py-8">
+        <div
+            style={{
+                backgroundImage: `url(${earthSateliteBg})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                minHeight: "100vh",
+                position: "relative",
+            }}
+        >
+            <div
+                style={{
+                    position: "absolute",
+                    inset: 0,
+                    background: "linear-gradient(135deg, hsla(222, 47%, 6%, 0.93) 0%, hsla(222, 47%, 6%, 0.88) 50%, hsla(38, 92%, 50%, 0.05) 100%)",
+                    zIndex: 0,
+                }}
+            />
+        <div className="w-[90%] max-w-[800px] mx-auto py-8" style={{ position: "relative", zIndex: 1 }}>
             {/* Cabeçalho */}
             <div className="flex items-center justify-between mb-8 gap-4 flex-wrap">
                 <div>
@@ -207,6 +226,7 @@ function Alertas() {
                     </div>
                 </section>
             )}
+        </div>
         </div>
     );
 }

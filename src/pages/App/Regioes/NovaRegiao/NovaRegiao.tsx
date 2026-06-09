@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router";
 import { ArrowLeft, CheckCircle, ChevronDown } from "lucide-react";
+import earthSateliteBg from "../../../../assets/earth-satelite.jpg";
 import { useAuth } from "../../../../context/AuthContext";
 import { getSubprefeituras } from "../../../../api/getSubprefeituras";
 import { postRegiao } from "../../../../api/postRegiao";
@@ -101,7 +102,25 @@ function NovaRegiao() {
 
     if (alertaGerado) {
         return (
-            <div className="w-[90%] max-w-[600px] mx-auto py-8">
+            <div
+                style={{
+                    backgroundImage: `url(${earthSateliteBg})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                    minHeight: "100vh",
+                    position: "relative",
+                }}
+            >
+                <div
+                    style={{
+                        position: "absolute",
+                        inset: 0,
+                        background: "linear-gradient(135deg, hsla(222, 47%, 6%, 0.93) 0%, hsla(222, 47%, 6%, 0.88) 50%, hsla(38, 92%, 50%, 0.05) 100%)",
+                        zIndex: 0,
+                    }}
+                />
+            <div className="w-[90%] max-w-[600px] mx-auto py-8" style={{ position: "relative", zIndex: 1 }}>
                 <div
                     className="p-8 rounded-2xl border flex flex-col gap-6 items-center text-center"
                     style={{ background: "var(--interface-dark)", borderColor: "var(--interface-border)" }}
@@ -144,11 +163,30 @@ function NovaRegiao() {
                     </Button>
                 </div>
             </div>
+            </div>
         );
     }
 
     return (
-        <div className="w-[90%] max-w-[600px] mx-auto py-8">
+        <div
+            style={{
+                backgroundImage: `url(${earthSateliteBg})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                minHeight: "100vh",
+                position: "relative",
+            }}
+        >
+            <div
+                style={{
+                    position: "absolute",
+                    inset: 0,
+                    background: "linear-gradient(135deg, hsla(222, 47%, 6%, 0.93) 0%, hsla(222, 47%, 6%, 0.88) 50%, hsla(38, 92%, 50%, 0.05) 100%)",
+                    zIndex: 0,
+                }}
+            />
+        <div className="w-[90%] max-w-[600px] mx-auto py-8" style={{ position: "relative", zIndex: 1 }}>
             {/* Cabeçalho */}
             <div className="flex items-center gap-3 mb-8">
                 <button
@@ -334,6 +372,7 @@ function NovaRegiao() {
                     </Button>
                 </form>
             </div>
+        </div>
         </div>
     );
 }
