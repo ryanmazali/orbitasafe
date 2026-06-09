@@ -7,7 +7,7 @@ import { getAlertasByRegiao } from "../../../api/getAlertasByRegiao";
 import { deleteRegiao } from "../../../api/deleteRegiao";
 import { Badge } from "../../../components";
 import type { Subprefeitura, Alerta, NivelAlerta } from "../../../types";
-import earthBg from "../../../assets/earth.jpg";
+import earthBg from "../../../assets/earth-satelite.jpg";
 
 function formatarNome(nome: string): string {
     return nome
@@ -120,8 +120,6 @@ function Explorar() {
             .finally(() => setLoading(false));
     }, []);
 
-    const maxAlagamento = Math.max(...subprefeituras.map((s) => getQtAlagamento(s)), 1);
-
     async function handleVerRisco(subpref: Subprefeitura) {
         if (!usuario) return;
         setAnalisando(subpref.idSubpref);
@@ -166,6 +164,8 @@ function Explorar() {
 
     const outras = subprefFiltradas.filter((s) => !TODAS_ZONAS_NOMES.includes(s.nmSubpref));
     if (outras.length > 0) zonasVisiveis.push({ zona: "Outras", subprefs: outras });
+
+    const maxAlagamento = Math.max(...subprefeituras.map((s) => getQtAlagamento(s)), 1);
 
     return (
         <div
