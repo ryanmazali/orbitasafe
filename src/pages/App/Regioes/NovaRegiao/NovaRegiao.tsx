@@ -1,12 +1,25 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router";
-import { ArrowLeft, CheckCircle } from "lucide-react";
+import { ArrowLeft, CheckCircle, ChevronDown } from "lucide-react";
 import { useAuth } from "../../../../context/AuthContext";
 import { getSubprefeituras } from "../../../../api/getSubprefeituras";
 import { postRegiao } from "../../../../api/postRegiao";
 import { getAlertasByRegiao } from "../../../../api/getAlertasByRegiao";
 import { Input, Button, Badge } from "../../../../components";
 import type { Subprefeitura, Alerta, NivelAlerta } from "../../../../types";
+
+function formatarNome(nome: string): string {
+    return nome
+        .toLowerCase()
+        .split(" ")
+        .map((palavra) =>
+            ["de", "da", "do", "das", "dos", "e"].includes(palavra)
+                ? palavra
+                : palavra.charAt(0).toUpperCase() + palavra.slice(1)
+        )
+        .join(" ")
+        .replace(/-([a-z])/g, (_, letra) => "-" + letra.toUpperCase());
+}
 
 function nivelVariant(nivel: NivelAlerta): "success" | "warning" | "error" {
     if (nivel === "BAIXO") return "success";
@@ -21,9 +34,12 @@ function NovaRegiao() {
     const [loadingSubp, setLoadingSubp] = useState(true);
     const [nome, setNome] = useState("");
     const [idSubpref, setIdSubpref] = useState<number | "">("");
+    const [dropdownAberto, setDropdownAberto] = useState(false);
+    const [busca, setBusca] = useState("");
     const [loading, setLoading] = useState(false);
     const [erro, setErro] = useState("");
     const [alertaGerado, setAlertaGerado] = useState<Alerta | null>(null);
+    const dropdownRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         document.title = "Nova Região | OrbitaSafe";
@@ -36,9 +52,32 @@ function NovaRegiao() {
             .finally(() => setLoadingSubp(false));
     }, []);
 
+    useEffect(() => {
+        function handleClickFora(e: MouseEvent) {
+            if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+                setDropdownAberto(false);
+                setBusca("");
+            }
+        }
+        document.addEventListener("mousedown", handleClickFora);
+        return () => document.removeEventListener("mousedown", handleClickFora);
+    }, []);
+
+    const subprefSelecionada = subprefeituras.find((s) => s.idSubpref === idSubpref);
+
+    const subprefFiltradas = subprefeituras
+        .sort((a, b) => formatarNome(a.nmSubpref).localeCompare(formatarNome(b.nmSubpref)))
+        .filter((s) =>
+            formatarNome(s.nmSubpref).toLowerCase().includes(busca.toLowerCase())
+        );
+
     async function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
-        if (!usuario || idSubpref === "") return;
+        if (!usuario) return;
+        if (idSubpref === "") {
+            setErro("Selecione uma subprefeitura antes de continuar.");
+            return;
+        }
         setErro("");
         setLoading(true);
         try {
@@ -82,10 +121,7 @@ function NovaRegiao() {
 
                     <div
                         className="w-full p-5 rounded-xl border"
-                        style={{
-                            background: "var(--interface-base)",
-                            borderColor: "var(--interface-border)",
-                        }}
+                        style={{ background: "var(--interface-base)", borderColor: "var(--interface-border)" }}
                     >
                         <div className="flex items-center justify-between mb-3">
                             <span className="text-sm font-semibold" style={{ color: "var(--text-dark)" }}>
@@ -157,48 +193,127 @@ function NovaRegiao() {
                         required
                     />
 
+                    {/* Dropdown customizado de subprefeituras */}
                     <div className="w-full">
                         <label
-                            htmlFor="subprefeitura"
                             className="block mb-1 text-sm"
                             style={{ color: "var(--text-base)" }}
                         >
                             Subprefeitura
                         </label>
-                        <select
-                            id="subprefeitura"
-                            value={idSubpref}
-                            onChange={(e) => setIdSubpref(Number(e.target.value))}
-                            required
-                            disabled={loadingSubp}
-                            className="w-full border rounded-full py-3 px-5 text-sm cursor-pointer focus:outline-none transition-colors duration-200 disabled:opacity-50"
-                            style={{
-                                background: "var(--interface-dark)",
-                                borderColor: "var(--interface-border)",
-                                color: idSubpref === "" ? "var(--text-light)" : "var(--text-darkest)",
-                            }}
-                            onFocus={(e) => {
-                                e.currentTarget.style.borderColor = "var(--brand-primary)";
-                            }}
-                            onBlur={(e) => {
-                                e.currentTarget.style.borderColor = "var(--interface-border)";
-                            }}
-                        >
-                            <option value="" disabled style={{ color: "var(--text-light)" }}>
-                                {loadingSubp ? "Carregando..." : "Selecione uma subprefeitura"}
-                            </option>
-                            {subprefeituras
-                                .sort((a, b) => a.nmSubpref.localeCompare(b.nmSubpref))
-                                .map((s) => (
-                                    <option
-                                        key={s.idSubpref}
-                                        value={s.idSubpref}
-                                        style={{ background: "var(--interface-dark)", color: "var(--text-darkest)" }}
+                        <div ref={dropdownRef} className="relative">
+                            {/* Trigger */}
+                            <button
+                                type="button"
+                                onClick={() => {
+                                    if (!loadingSubp) {
+                                        setDropdownAberto(!dropdownAberto);
+                                        setBusca("");
+                                    }
+                                }}
+                                disabled={loadingSubp}
+                                className="w-full flex items-center justify-between border rounded-full py-3 px-5 text-sm text-left transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+                                style={{
+                                    background: "var(--interface-dark)",
+                                    borderColor: dropdownAberto ? "var(--brand-primary)" : "var(--interface-border)",
+                                    color: subprefSelecionada ? "var(--text-darkest)" : "var(--text-light)",
+                                }}
+                            >
+                                <span className="truncate">
+                                    {loadingSubp
+                                        ? "Carregando..."
+                                        : subprefSelecionada
+                                            ? formatarNome(subprefSelecionada.nmSubpref)
+                                            : "Selecione uma subprefeitura"}
+                                </span>
+                                <ChevronDown
+                                    size={16}
+                                    style={{
+                                        color: "var(--text-light)",
+                                        flexShrink: 0,
+                                        marginLeft: "8px",
+                                        transform: dropdownAberto ? "rotate(180deg)" : "rotate(0deg)",
+                                        transition: "transform 0.2s ease",
+                                    }}
+                                />
+                            </button>
+
+                            {/* Painel */}
+                            {dropdownAberto && (
+                                <div
+                                    className="absolute top-full left-0 right-0 mt-1 rounded-xl border z-50 overflow-hidden"
+                                    style={{
+                                        background: "var(--interface-dark)",
+                                        borderColor: "var(--brand-primary)",
+                                        boxShadow: "0 8px 32px var(--interface-shadow)",
+                                    }}
+                                >
+                                    {/* Input de busca */}
+                                    <div
+                                        className="p-2 border-b"
+                                        style={{ borderColor: "var(--interface-border)" }}
                                     >
-                                        {s.nmSubpref}
-                                    </option>
-                                ))}
-                        </select>
+                                        <input
+                                            type="text"
+                                            placeholder="Buscar subprefeitura..."
+                                            value={busca}
+                                            onChange={(e) => setBusca(e.target.value)}
+                                            autoFocus
+                                            className="w-full py-2 px-3 rounded-lg text-sm focus:outline-none"
+                                            style={{
+                                                background: "var(--interface-base)",
+                                                color: "var(--text-darkest)",
+                                                border: "1px solid var(--interface-border)",
+                                                caretColor: "var(--brand-primary)",
+                                            }}
+                                        />
+                                    </div>
+
+                                    {/* Lista de opções */}
+                                    <ul className="overflow-y-auto py-1" style={{ maxHeight: "220px" }}>
+                                        {subprefFiltradas.length === 0 ? (
+                                            <li
+                                                className="px-4 py-3 text-sm"
+                                                style={{ color: "var(--text-light)" }}
+                                            >
+                                                Nenhuma subprefeitura encontrada
+                                            </li>
+                                        ) : (
+                                            subprefFiltradas.map((s) => {
+                                                const selecionada = s.idSubpref === idSubpref;
+                                                return (
+                                                    <li
+                                                        key={s.idSubpref}
+                                                        onClick={() => {
+                                                            setIdSubpref(s.idSubpref);
+                                                            setDropdownAberto(false);
+                                                            setBusca("");
+                                                        }}
+                                                        className="px-4 py-2.5 text-sm cursor-pointer transition-colors duration-150"
+                                                        style={{
+                                                            background: selecionada ? "var(--brand-primary-light)" : "transparent",
+                                                            color: selecionada ? "var(--brand-primary)" : "var(--text-dark)",
+                                                        }}
+                                                        onMouseEnter={(e) => {
+                                                            if (!selecionada) {
+                                                                (e.currentTarget as HTMLLIElement).style.background = "var(--interface-base)";
+                                                            }
+                                                        }}
+                                                        onMouseLeave={(e) => {
+                                                            if (!selecionada) {
+                                                                (e.currentTarget as HTMLLIElement).style.background = "transparent";
+                                                            }
+                                                        }}
+                                                    >
+                                                        {formatarNome(s.nmSubpref)}
+                                                    </li>
+                                                );
+                                            })
+                                        )}
+                                    </ul>
+                                </div>
+                            )}
+                        </div>
                     </div>
 
                     {erro && (
