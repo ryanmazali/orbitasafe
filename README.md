@@ -105,7 +105,7 @@ src/
 
 | Login | Nova Região | Alertas |
 |---|---|---|
-| ![Login](./docs/login.jpg) | ![Nova Região](./docs/nova-regiao.jpg) | ![Alertas](./docs/alerta.jgp) |
+| ![Login](./docs/login.jpg) | ![Nova Região](./docs/nova-regiao.jpg) | ![Alertas](./docs/alerta.jpg) |
 
 > Prints das telas em dispositivo mobile (390px)
 
