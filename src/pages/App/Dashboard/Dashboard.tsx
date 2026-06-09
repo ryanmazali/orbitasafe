@@ -182,7 +182,7 @@ function Dashboard() {
                         Nenhuma região cadastrada
                     </h2>
                     <p className="text-sm max-w-[320px]" style={{ color: "var(--text-base)" }}>
-                        Adicione uma região para começar a monitorar o risco de alagamento em tempo real.
+                        Adicione uma região para começar a monitorar o risco de alagamento com base em dados satelitais e IA preditiva.
                     </p>
                     <Link
                         to="/app/regioes/nova"
