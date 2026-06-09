@@ -78,10 +78,10 @@ function RegiaoDetalhe() {
             />
         <div className="w-[90%] max-w-[800px] mx-auto py-8" style={{ position: "relative", zIndex: 1 }}>
             {/* Cabeçalho */}
-            <div className="flex items-center gap-3 mb-6">
+            <div className="relative flex flex-col gap-3 mb-6 tablet:flex-row tablet:items-center tablet:justify-between">
                 <button
                     onClick={() => navigate("/app")}
-                    className="flex items-center gap-2 px-4 py-2 rounded-full border cursor-pointer transition-all duration-200 hover:opacity-75 text-sm font-medium"
+                    className="self-start flex items-center gap-2 px-4 py-2 rounded-full border cursor-pointer transition-all duration-200 hover:opacity-75 text-sm font-medium"
                     style={{
                         background: "transparent",
                         borderColor: "var(--interface-border)",
@@ -91,7 +91,7 @@ function RegiaoDetalhe() {
                     <ArrowLeft size={16} />
                     Voltar ao Dashboard
                 </button>
-                <div className="flex-1">
+                <div className="flex-1 text-center tablet:text-left">
                     <h1
                         className="text-xl font-black"
                         style={{ fontFamily: "var(--font-display)", color: "var(--text-darkest)" }}
@@ -105,7 +105,7 @@ function RegiaoDetalhe() {
                 <button
                     onClick={handleAtualizar}
                     disabled={atualizando || loading}
-                    className="flex items-center gap-2 text-sm font-semibold px-4 py-2.5 rounded-full border transition-all duration-200 cursor-pointer disabled:opacity-50"
+                    className="absolute top-0 right-0 tablet:static flex items-center gap-2 text-sm font-semibold px-4 py-2.5 rounded-full border transition-all duration-200 cursor-pointer disabled:opacity-50"
                     style={{
                         color: "var(--brand-primary)",
                         borderColor: "var(--brand-primary)",
