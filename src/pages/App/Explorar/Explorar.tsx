@@ -213,6 +213,9 @@ function Explorar() {
                     <p className="text-sm" style={{ color: "var(--text-base)" }}>
                         Consulte o risco de alagamento em qualquer subprefeitura de São Paulo
                     </p>
+                    <p className="text-xs mt-1" style={{ color: "var(--text-light)" }}>
+                        Os dados de histórico refletem registros da CGE-SP utilizados no treinamento dos modelos de IA.
+                    </p>
                 </div>
 
                 {/* Busca */}
