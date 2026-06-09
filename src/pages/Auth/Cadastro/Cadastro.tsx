@@ -5,7 +5,7 @@ import { useAuth } from "../../../context/AuthContext";
 import { postAuthCadastro } from "../../../api/postAuthCadastro";
 import { postAuthLogin } from "../../../api/postAuthLogin";
 import { Input, Button } from "../../../components";
-import earthBg from "../../assets/earth.jpg";
+import earthBg from "../../../assets/earth.jpg";
 
 function Cadastro() {
     const { login, autenticado } = useAuth();

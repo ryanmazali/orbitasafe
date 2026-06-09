@@ -4,7 +4,7 @@ import { ShieldCheck } from "lucide-react";
 import { useAuth } from "../../../context/AuthContext";
 import { postAuthLogin } from "../../../api/postAuthLogin";
 import { Input, Button } from "../../../components";
-import earthBg from "../../assets/earth.jpg";
+import earthBg from "../../../assets/earth.jpg";
 
 function Login() {
     const { login, autenticado } = useAuth();
