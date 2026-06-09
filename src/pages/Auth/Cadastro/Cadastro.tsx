@@ -33,7 +33,13 @@ function Cadastro() {
             login(usuario);
             navigate("/app", { replace: true });
         } catch (err) {
-            setErro(err instanceof Error ? err.message : "Erro ao criar conta");
+            if (err instanceof TypeError) {
+                setErro("Servidor iniciando, aguarde alguns segundos e tente novamente.");
+            } else if (err instanceof Error) {
+                setErro(err.message);
+            } else {
+                setErro("Ocorreu um erro inesperado. Tente novamente.");
+            }
         } finally {
             setLoading(false);
         }
