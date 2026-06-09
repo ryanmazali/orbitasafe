@@ -1,0 +1,34 @@
+.public-layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.public-layout-content {
+    flex: 1;
+    padding-bottom: 5rem;
+}
+
+.public-layout-logo {
+    display: none;
+}
+
+/* .public-layout-cta {
+    display: none;
+} */
+
+@media (min-width: 1280px) {
+    .public-layout-content {
+        padding-bottom: 0;
+    }
+
+    .public-layout-logo {
+        display: block;
+    }
+
+    .public-layout-cta {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+}
