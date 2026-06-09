@@ -134,7 +134,7 @@ function Dashboard() {
                         Dashboard
                     </h1>
                     <p className="text-sm" style={{ color: "var(--text-base)" }}>
-                        Acompanhe o risco climático das suas regiões
+                        Acompanhe o risco de eventos climáticos nas suas regiões
                     </p>
                 </div>
                 <Link

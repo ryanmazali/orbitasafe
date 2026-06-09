@@ -413,7 +413,7 @@ function Explorar() {
                             </button>
                         </div>
 
-                        <div className="flex items-center gap-3 mb-4 flex-wrap">
+                        <div className="flex items-center gap-3 mb-1 flex-wrap">
                             <Badge variant={nivelVariant(resultado.alerta.nivelAlerta)}>
                                 {resultado.alerta.nivelAlerta === "BAIXO" && "Risco Baixo"}
                                 {resultado.alerta.nivelAlerta === "MEDIO" && "Risco Médio"}
@@ -426,6 +426,10 @@ function Explorar() {
                                 {resultado.alerta.tpEvento}
                             </span>
                         </div>
+
+                        <p className="text-xs mb-4" style={{ color: "var(--text-light)" }}>
+                            Risco de eventos climáticos extremos
+                        </p>
 
                         <p
                             className="text-sm leading-relaxed mb-6"

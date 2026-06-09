@@ -25,7 +25,7 @@ const features = [
         icon: <BrainCircuit size={32} />,
         title: "Inteligência Artificial",
         description:
-        "Nosso modelo de IA analisa padrões históricos e condições atuais para prever riscos de alagamento com alta precisão.",
+        "Nosso modelo de IA analisa padrões históricos e condições atuais para prever riscos de eventos climáticos com alta precisão.",
     },
     {
         id: 3,
@@ -47,7 +47,7 @@ const stats = [
     { id: 1, icon: <CloudRain size={28} />, value: "32", label: "Subprefeituras monitoradas" },
     { id: 2, icon: <TriangleAlert size={28} />, value: "96%", label: "Precisão do modelo de IA" },
     { id: 3, icon: <Users size={28} />, value: "24/7", label: "Monitoramento contínuo" },
-    { id: 4, icon: <ShieldAlert size={28} />, value: "3", label: "Níveis de alerta" },
+    { id: 4, icon: <ShieldAlert size={28} />, value: "3", label: "Níveis de risco climático" },
 ];
 
 function Home() {

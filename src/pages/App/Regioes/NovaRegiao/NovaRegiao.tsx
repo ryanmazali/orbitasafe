@@ -134,7 +134,7 @@ function NovaRegiao() {
                             Região cadastrada!
                         </h2>
                         <p className="text-sm" style={{ color: "var(--text-base)" }}>
-                            A análise automática foi concluída. Veja o resultado abaixo.
+                            A análise de risco climático foi concluída. Veja o resultado abaixo.
                         </p>
                     </div>
 

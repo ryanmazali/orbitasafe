@@ -137,6 +137,9 @@ function RegiaoDetalhe() {
                             {ultimoAlerta.nivelAlerta === "ALTO" && "Risco Alto"}
                         </Badge>
                     </div>
+                    <p className="text-xs mt-1" style={{ color: "var(--text-light)" }}>
+                        Risco de eventos climáticos extremos (alagamentos, vendavais, deslizamentos)
+                    </p>
                     <p className="text-sm font-semibold mb-1" style={{ color: "var(--text-dark)" }}>
                         {ultimoAlerta.tpEvento}
                     </p>
