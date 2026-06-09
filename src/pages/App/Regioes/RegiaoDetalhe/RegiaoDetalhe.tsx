@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router";
 import { ArrowLeft, RefreshCw, AlertTriangle } from "lucide-react";
-import earthSateliteBg from "../../../../assets/earth.jpg";
+import earthSateliteBg from "../../../../assets/earth-satelite.jpg";
 import { getAlertasByRegiao } from "../../../../api/getAlertasByRegiao";
 import { postAnalisarRegiao } from "../../../../api/postAnalisarRegiao";
 import { Badge } from "../../../../components";
@@ -81,14 +81,15 @@ function RegiaoDetalhe() {
             <div className="flex items-center gap-3 mb-6">
                 <button
                     onClick={() => navigate("/app")}
-                    className="p-2 rounded-full border cursor-pointer transition-all duration-200 hover:opacity-75"
+                    className="flex items-center gap-2 px-4 py-2 rounded-full border cursor-pointer transition-all duration-200 hover:opacity-75 text-sm font-medium"
                     style={{
                         background: "transparent",
                         borderColor: "var(--interface-border)",
                         color: "var(--text-base)",
                     }}
                 >
-                    <ArrowLeft size={18} />
+                    <ArrowLeft size={16} />
+                    Voltar ao Dashboard
                 </button>
                 <div className="flex-1">
                     <h1
