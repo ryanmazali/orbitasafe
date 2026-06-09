@@ -1,7 +1,6 @@
 import fotoGuilherme from "../../assets/foto-guilherme.jpg";
 import fotoDiego from "../../assets/foto-diego.jpg";
 import fotoRyan from "../../assets/foto-ryan.jpeg";
-import fotoVitti from "../../assets/vitti.jpg"
 
 export interface Integrante {
     id: string;
