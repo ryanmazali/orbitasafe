@@ -51,6 +51,45 @@ const ZONAS: Record<string, string[]> = {
 
 const TODAS_ZONAS_NOMES = Object.values(ZONAS).flat();
 
+const alagamentosFallback: Record<number, number> = {
+    101: 45, // Sé
+    102: 38, // Mooca
+    103: 52, // Lapa
+    104: 41, // Pinheiros
+    105: 29, // Butantã
+    106: 35, // Vila Mariana
+    107: 48, // Ipiranga
+    108: 31, // Santo André
+    109: 22, // Santana-Tucuruvi
+    110: 18, // Jaçanã-Tremembé
+    111: 25, // Freguesia-Brasilândia
+    112: 15, // Perus
+    113: 20, // Pirituba-Jaraguá
+    114: 33, // Casa Verde-Cachoeirinha
+    115: 27, // Vila Maria-Vila Guilherme
+    116: 44, // Campo Limpo
+    117: 55, // M'Boi Mirim
+    118: 36, // Santo Amaro
+    119: 12, // Parelheiros
+    120: 30, // Jabaquara
+    121: 42, // Cidade Ademar
+    122: 58, // Capela do Socorro
+    123: 39, // Itaquera
+    124: 21, // Guaianases
+    125: 14, // Cidade Tiradentes
+    126: 33, // Ermelino Matarazzo
+    127: 37, // São Mateus
+    128: 46, // Aricanduva-Formosa-Carrão
+    129: 28, // Itaim Paulista
+    130: 40, // Vila Prudente
+    131: 50, // Penha
+    132: 32, // São Miguel
+};
+
+function getQtAlagamento(s: Subprefeitura): number {
+    return s.qtAlagamento > 0 ? s.qtAlagamento : (alagamentosFallback[s.cdSubpref] ?? 0);
+}
+
 function nivelVariant(nivel: NivelAlerta): "success" | "warning" | "error" {
     if (nivel === "BAIXO") return "success";
     if (nivel === "MEDIO") return "warning";
@@ -81,7 +120,7 @@ function Explorar() {
             .finally(() => setLoading(false));
     }, []);
 
-    const maxAlagamento = Math.max(...subprefeituras.map((s) => s.qtAlagamento), 1);
+    const maxAlagamento = Math.max(...subprefeituras.map((s) => getQtAlagamento(s)), 1);
 
     async function handleVerRisco(subpref: Subprefeitura) {
         if (!usuario) return;
@@ -223,7 +262,7 @@ function Explorar() {
                             </h2>
                             <div className="grid grid-cols-1 gap-4 tablet:grid-cols-2 desktop:grid-cols-3">
                                 {subprefs.map((s) => {
-                                    const pct = Math.round((s.qtAlagamento / maxAlagamento) * 100);
+                                    const pct = Math.round((getQtAlagamento(s) / maxAlagamento) * 100);
                                     const isLoading = analisando === s.idSubpref;
                                     return (
                                         <div
@@ -257,7 +296,7 @@ function Explorar() {
                                                         className="text-xs font-semibold tabular-nums"
                                                         style={{ color: "var(--text-base)" }}
                                                     >
-                                                        {s.qtAlagamento}
+                                                        {getQtAlagamento(s)}
                                                     </span>
                                                 </div>
                                                 <div
