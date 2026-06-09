@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router";
 import { ArrowLeft, RefreshCw, AlertTriangle } from "lucide-react";
-import earthSateliteBg from "../../../../assets/earth-satelite.jpg";
+import earthSateliteBg from "../../../../assets/earth.jpg";
 import { getAlertasByRegiao } from "../../../../api/getAlertasByRegiao";
 import { postAnalisarRegiao } from "../../../../api/postAnalisarRegiao";
 import { Badge } from "../../../../components";

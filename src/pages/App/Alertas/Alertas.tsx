@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Bell, CheckCheck } from "lucide-react";
-import earthSateliteBg from "../../../assets/earth-satelite.jpg";
+import earthSateliteBg from "../../../assets/earth.jpg";
 import { useAuth } from "../../../context/AuthContext";
 import { getNotificacoesByUsuario } from "../../../api/getNotificacoesByUsuario";
 import { putMarcarNotificacaoLida } from "../../../api/putMarcarNotificacaoLida";

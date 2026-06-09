@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router";
 import { ArrowLeft, CheckCircle, ChevronDown } from "lucide-react";
-import earthSateliteBg from "../../../../assets/earth-satelite.jpg";
+import earthSateliteBg from "../../../../assets/earth.jpg";
 import { useAuth } from "../../../../context/AuthContext";
 import { getSubprefeituras } from "../../../../api/getSubprefeituras";
 import { postRegiao } from "../../../../api/postRegiao";
