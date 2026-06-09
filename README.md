@@ -91,18 +91,34 @@ src/
 
 - **Deploy (Frontend):** https://orbitasafe.vercel.app
 - **API (Backend):** https://api-orbitasafe.onrender.com
+- **Repositório Frontend:** https://github.com/ryanmazali/orbitasafe
 - **Repositório Backend:** https://github.com/DiegoCPaulino/API-OrbitaSafe
+- **Vídeo de Apresentação:** (a ser adicionado após gravação)
+
+---
+
+## 🖼️ Telas do Projeto
+
+| Landing Page | Dashboard | Explorar |
+|---|---|---|
+| ![Home](./docs/home.png) | ![Dashboard](./docs/dashboard.png) | ![Explorar](./docs/explorar.png) |
+
+| Login | Nova Região | Alertas |
+|---|---|---|
+| ![Login](./docs/login.png) | ![Nova Região](./docs/nova-regiao.png) | ![Alertas](./docs/alertas.png) |
+
+> Prints das telas em dispositivo mobile (390px)
 
 ---
 
 ## 👥 Equipe — 1TDSPR
 
-| Nome | RM | GitHub | LinkedIn |
-|---|---|---|---|
-| Guilherme Dabul | 559901 | [@guidabuul](https://github.com/guidabuul) | [LinkedIn](https://www.linkedin.com/in/guilhermedabul/) |
-| Diego Paulino | 566841 | [@DiegoCPaulino](https://github.com/DiegoCPaulino) | [LinkedIn](https://www.linkedin.com/in/diego-paulino-9bb31b36a/) |
-| Renan Lima | — | — | — |
-| Ryan Mazali | 567168 | [@ryanmazali](https://github.com/ryanmazali) | [LinkedIn](https://linkedin.com/in/ryanmazali/) |
+| Nome | RM | Turma | GitHub | LinkedIn |
+|---|---|---|---|---|
+| Guilherme Dabul | 559901 | 1TDSPR | [@guidabuul](https://github.com/guidabuul) | [LinkedIn](https://www.linkedin.com/in/guilhermedabul/) |
+| Diego Paulino | 566841 | 1TDSPR | [@DiegoCPaulino](https://github.com/DiegoCPaulino) | [LinkedIn](https://www.linkedin.com/in/diego-paulino-9bb31b36a/) |
+| Renan Lima | — | 1TDSPR | — | — |
+| Ryan Mazali | 567168 | 1TDSPR | [@ryanmazali](https://github.com/ryanmazali) | [LinkedIn](https://linkedin.com/in/ryanmazali/) |
 
 ---
 
@@ -113,6 +129,16 @@ src/
 - **Sem bibliotecas de UI** — 100% Tailwind CSS customizado
 - **Fetch nativo** — sem Axios
 - **Autenticação** — sessionStorage (sem JWT)
+
+---
+
+## 📬 Contato
+
+Dúvidas ou sugestões sobre o projeto? Entre em contato com a equipe:
+
+- **Ryan Mazali** — [LinkedIn](https://linkedin.com/in/ryanmazali/) · [@ryanmazali](https://github.com/ryanmazali)
+- **Diego Paulino** — [LinkedIn](https://www.linkedin.com/in/diego-paulino-9bb31b36a/) · [@DiegoCPaulino](https://github.com/DiegoCPaulino)
+- **Guilherme Dabul** — [LinkedIn](https://www.linkedin.com/in/guilhermedabul/) · [@guidabuul](https://github.com/guidabuul)
 
 ---
 
