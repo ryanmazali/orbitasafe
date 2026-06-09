@@ -196,7 +196,7 @@ function Dashboard() {
                                     </h3>
                                     {reg.ultimoAlerta && (
                                         <p className="text-xs" style={{ color: "var(--text-light)" }}>
-                                            {new Date(reg.ultimoAlerta.dtAlerta).toLocaleDateString("pt-BR")}
+                                            {new Date(reg.ultimoAlerta.dtAlerta + "T00:00:00").toLocaleDateString("pt-BR")}
                                         </p>
                                     )}
                                 </div>

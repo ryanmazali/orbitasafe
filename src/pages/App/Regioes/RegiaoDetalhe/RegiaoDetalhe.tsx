@@ -126,7 +126,7 @@ function RegiaoDetalhe() {
                         {ultimoAlerta.dsAlerta}
                     </p>
                     <p className="text-xs mt-3" style={{ color: "var(--text-light)" }}>
-                        {new Date(ultimoAlerta.dtAlerta).toLocaleDateString("pt-BR", {
+                        {new Date(ultimoAlerta.dtAlerta + "T00:00:00").toLocaleDateString("pt-BR", {
                             day: "2-digit",
                             month: "long",
                             year: "numeric",
@@ -192,7 +192,7 @@ function RegiaoDetalhe() {
                                     {alerta.dsAlerta}
                                 </p>
                                 <p className="text-xs" style={{ color: "var(--text-light)" }}>
-                                    {new Date(alerta.dtAlerta).toLocaleDateString("pt-BR")}
+                                    {new Date(alerta.dtAlerta + "T00:00:00").toLocaleDateString("pt-BR")}
                                 </p>
                             </div>
                         ))}

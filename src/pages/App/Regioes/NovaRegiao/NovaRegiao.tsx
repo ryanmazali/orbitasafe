@@ -135,7 +135,7 @@ function NovaRegiao() {
                             {alertaGerado.dsAlerta}
                         </p>
                         <p className="text-xs mt-3 text-left" style={{ color: "var(--text-light)" }}>
-                            {new Date(alertaGerado.dtAlerta).toLocaleDateString("pt-BR")}
+                            {new Date(alertaGerado.dtAlerta + "T00:00:00").toLocaleDateString("pt-BR")}
                         </p>
                     </div>
 

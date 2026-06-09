@@ -157,7 +157,7 @@ function Alertas() {
                                     </span>
                                 </div>
                                 <p className="text-xs ml-5" style={{ color: "var(--text-light)" }}>
-                                    {new Date(notif.dtNotif).toLocaleDateString("pt-BR", {
+                                    {new Date(notif.dtNotif + "T00:00:00").toLocaleDateString("pt-BR", {
                                         day: "2-digit",
                                         month: "short",
                                         year: "numeric",
@@ -194,7 +194,7 @@ function Alertas() {
                                 </p>
                                 <div className="flex items-center justify-between gap-3">
                                     <p className="text-xs" style={{ color: "var(--text-light)" }}>
-                                        {new Date(notif.dtNotif).toLocaleDateString("pt-BR", {
+                                        {new Date(notif.dtNotif + "T00:00:00").toLocaleDateString("pt-BR", {
                                             day: "2-digit",
                                             month: "short",
                                             year: "numeric",
