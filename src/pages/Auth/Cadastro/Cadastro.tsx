@@ -5,6 +5,7 @@ import { useAuth } from "../../../context/AuthContext";
 import { postAuthCadastro } from "../../../api/postAuthCadastro";
 import { postAuthLogin } from "../../../api/postAuthLogin";
 import { Input, Button } from "../../../components";
+import earthBg from "../../assets/earth.jpg";
 
 function Cadastro() {
     const { login, autenticado } = useAuth();
@@ -47,10 +48,25 @@ function Cadastro() {
 
     return (
         <div
-            className="min-h-screen flex items-center justify-center px-5 py-10"
-            style={{ background: "var(--interface-darkest)" }}
+            className="flex items-center justify-center px-5 py-10"
+            style={{
+                backgroundImage: `url(${earthBg})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                minHeight: "100vh",
+                position: "relative",
+            }}
         >
-            <div className="w-full max-w-[440px]">
+            <div
+                style={{
+                    position: "absolute",
+                    inset: 0,
+                    background: "linear-gradient(135deg, hsla(222, 47%, 6%, 0.92) 0%, hsla(222, 47%, 6%, 0.85) 50%, hsla(38, 92%, 50%, 0.08) 100%)",
+                    zIndex: 0,
+                }}
+            />
+            <div className="w-full max-w-[440px]" style={{ position: "relative", zIndex: 1 }}>
                 {/* Logo */}
                 <div className="flex flex-col items-center gap-3 mb-8">
                     <ShieldCheck size={48} className="text-[var(--brand-primary)]" />
