@@ -52,42 +52,42 @@ const ZONAS: Record<string, string[]> = {
 const TODAS_ZONAS_NOMES = Object.values(ZONAS).flat();
 
 const alagamentosFallback: Record<number, number> = {
-    101: 45, // Sé
-    102: 38, // Mooca
-    103: 52, // Lapa
-    104: 41, // Pinheiros
-    105: 29, // Butantã
-    106: 35, // Vila Mariana
-    107: 48, // Ipiranga
-    108: 31, // Santo André
-    109: 22, // Santana-Tucuruvi
-    110: 18, // Jaçanã-Tremembé
-    111: 25, // Freguesia-Brasilândia
-    112: 15, // Perus
-    113: 20, // Pirituba-Jaraguá
-    114: 33, // Casa Verde-Cachoeirinha
-    115: 27, // Vila Maria-Vila Guilherme
-    116: 44, // Campo Limpo
-    117: 55, // M'Boi Mirim
-    118: 36, // Santo Amaro
-    119: 12, // Parelheiros
-    120: 30, // Jabaquara
-    121: 42, // Cidade Ademar
-    122: 58, // Capela do Socorro
-    123: 39, // Itaquera
-    124: 21, // Guaianases
-    125: 14, // Cidade Tiradentes
-    126: 33, // Ermelino Matarazzo
-    127: 37, // São Mateus
-    128: 46, // Aricanduva-Formosa-Carrão
-    129: 28, // Itaim Paulista
-    130: 40, // Vila Prudente
-    131: 50, // Penha
-    132: 32, // São Miguel
+    1: 32,  // São Miguel
+    2: 46,  // Aricanduva-Formosa-Carrão
+    3: 29,  // Butantã
+    4: 44,  // Campo Limpo
+    5: 58,  // Capela do Socorro
+    6: 33,  // Casa Verde-Cachoeirinha
+    7: 14,  // Cidade Tiradentes
+    8: 42,  // Cidade Ademar
+    9: 33,  // Ermelino Matarazzo
+    10: 25, // Freguesia-Brasilândia
+    11: 21, // Guaianases
+    12: 48, // Ipiranga
+    13: 39, // Itaquera
+    14: 28, // Itaim Paulista
+    15: 30, // Jabaquara
+    16: 18, // Jaçanã-Tremembé
+    17: 52, // Lapa
+    18: 55, // M'Boi Mirim
+    19: 38, // Mooca
+    20: 12, // Parelheiros
+    21: 50, // Penha
+    22: 15, // Perus
+    23: 41, // Pinheiros
+    24: 20, // Pirituba-Jaraguá
+    25: 22, // Santana-Tucuruvi
+    26: 36, // Santo Amaro
+    27: 31, // Santo André
+    28: 37, // São Mateus
+    29: 45, // Sé
+    30: 40, // Vila Prudente
+    31: 35, // Vila Mariana
+    32: 27, // Vila Maria-Vila Guilherme
 };
 
 function getQtAlagamento(s: Subprefeitura): number {
-    return s.qtAlagamento > 0 ? s.qtAlagamento : (alagamentosFallback[s.cdSubpref] ?? 0);
+    return s.qtAlagamento > 0 ? s.qtAlagamento : (alagamentosFallback[s.idSubpref] ?? 0);
 }
 
 function nivelVariant(nivel: NivelAlerta): "success" | "warning" | "error" {
