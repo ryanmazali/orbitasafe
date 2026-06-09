@@ -144,7 +144,14 @@ function Explorar() {
             alert(err instanceof Error ? err.message : "Erro ao analisar região");
         } finally {
             if (idRegTemp !== null) {
-                await deleteRegiao(idRegTemp).catch(() => {});
+                for (let i = 0; i < 3; i++) {
+                    try {
+                        await deleteRegiao(idRegTemp);
+                        break;
+                    } catch {
+                        if (i < 2) await new Promise((res) => setTimeout(res, 1000));
+                    }
+                }
             }
             setAnalisando(null);
         }
