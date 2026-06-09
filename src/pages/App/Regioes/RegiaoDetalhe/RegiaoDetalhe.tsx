@@ -78,22 +78,33 @@ function RegiaoDetalhe() {
             />
         <div className="w-[90%] max-w-[800px] mx-auto py-8" style={{ position: "relative", zIndex: 1 }}>
             {/* Cabeçalho */}
-            <div className="relative flex flex-col gap-3 mb-6 tablet:flex-row tablet:items-center tablet:justify-between">
-                <button
-                    onClick={() => navigate("/app")}
-                    className="self-start flex items-center gap-2 px-4 py-2 rounded-full border cursor-pointer transition-all duration-200 hover:opacity-75 text-sm font-medium"
-                    style={{
-                        background: "transparent",
-                        borderColor: "var(--interface-border)",
-                        color: "var(--text-base)",
-                    }}
-                >
-                    <ArrowLeft size={16} />
-                    Voltar ao Dashboard
-                </button>
-                <div className="flex-1 text-center tablet:text-left">
+            <div className="mb-8">
+                {/* Linha 1: Voltar + Atualizar */}
+                <div className="flex items-center justify-between mb-4">
+                    <button
+                        onClick={() => navigate("/app")}
+                        className="flex items-center gap-2 text-sm font-medium no-underline cursor-pointer border-none bg-transparent transition-colors duration-200 hover:opacity-75"
+                        style={{ color: "var(--text-base)" }}
+                    >
+                        <ArrowLeft size={16} />
+                        Voltar ao Dashboard
+                    </button>
+
+                    <button
+                        onClick={handleAtualizar}
+                        disabled={atualizando}
+                        className="flex items-center gap-2 text-xs font-bold px-4 py-2 rounded-full border-0 cursor-pointer transition-all duration-200 disabled:opacity-50"
+                        style={{ background: "var(--brand-primary)", color: "var(--interface-darkest)" }}
+                    >
+                        <RefreshCw size={13} className={atualizando ? "animate-spin" : ""} />
+                        {atualizando ? "Atualizando..." : "Atualizar análise"}
+                    </button>
+                </div>
+
+                {/* Linha 2: Título centralizado */}
+                <div className="text-center">
                     <h1
-                        className="text-xl font-black"
+                        className="text-xl font-black mb-1"
                         style={{ fontFamily: "var(--font-display)", color: "var(--text-darkest)" }}
                     >
                         Histórico de Alertas
@@ -102,19 +113,6 @@ function RegiaoDetalhe() {
                         Região #{idReg}
                     </p>
                 </div>
-                <button
-                    onClick={handleAtualizar}
-                    disabled={atualizando || loading}
-                    className="absolute top-0 right-0 tablet:static flex items-center gap-2 text-sm font-semibold px-4 py-2.5 rounded-full border transition-all duration-200 cursor-pointer disabled:opacity-50"
-                    style={{
-                        color: "var(--brand-primary)",
-                        borderColor: "var(--brand-primary)",
-                        background: "var(--brand-primary-light)",
-                    }}
-                >
-                    <RefreshCw size={15} className={atualizando ? "animate-spin" : ""} />
-                    {atualizando ? "Analisando..." : "Atualizar análise"}
-                </button>
             </div>
 
             {/* Último alerta — destaque */}
