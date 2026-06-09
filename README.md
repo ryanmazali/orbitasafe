@@ -1,73 +1,125 @@
-# React + TypeScript + Vite
+# OrbitaSafe 🛰️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Plataforma de monitoramento climático inteligente para São Paulo, desenvolvida como projeto acadêmico da **Global Solution 2026** da FIAP — tema **Economia Espacial**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📋 Sobre o Projeto
 
-## React Compiler
+O OrbitaSafe usa inteligência artificial e dados satelitais para monitorar riscos de alagamento nas 32 subprefeituras de São Paulo, emitindo alertas em tempo real para usuários cadastrados.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Funcionalidades
+- 🗺️ **Explorar** — consulte o risco de qualquer subprefeitura sem precisar cadastrar
+- 📍 **Monitoramento** — cadastre regiões e acompanhe o risco em tempo real
+- 🔔 **Alertas** — receba notificações para riscos MÉDIO e ALTO
+- 📊 **Dashboard** — visualize todas as suas regiões com badges de risco (BAIXO/MÉDIO/ALTO)
+- 🤖 **IA Preditiva** — dois modelos de machine learning treinados com dados reais da CGE-SP
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Como Executar
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Pré-requisitos
+- Node.js 18+
+- npm
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Instalação
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+# Clone o repositório
+git clone https://github.com/ryanmazali/orbitasafe.git
+cd orbitasafe
+
+# Instale as dependências
+npm install
+
+# Configure as variáveis de ambiente
+cp .env.example .env
+# Edite o .env com a URL da API
+
+# Execute em desenvolvimento
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Variáveis de Ambiente
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Crie um arquivo `.env` na raiz:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```env
+VITE_API_URL=https://api-orbitasafe.onrender.com
 ```
+
+---
+
+## 🛠️ Tecnologias
+
+| Tecnologia | Versão | Uso |
+|---|---|---|
+| React | 19 | Framework frontend |
+| TypeScript | 5 | Tipagem estática |
+| Vite | 6 | Build tool |
+| Tailwind CSS | 4 | Estilização |
+| React Router | 7 | Roteamento |
+| Lucide React | — | Ícones |
+| React Icons | — | Ícones sociais |
+
+---
+
+## 📁 Estrutura do Projeto
+
+```
+src/
+├── api/          # Funções de integração com a API
+├── assets/       # Imagens e recursos estáticos
+├── components/   # Componentes reutilizáveis
+├── context/      # AuthContext (sessão do usuário)
+├── pages/        # Páginas da aplicação
+│   ├── Home/
+│   ├── Sobre/
+│   ├── Integrantes/
+│   ├── FAQ/
+│   ├── Auth/     # Login e Cadastro
+│   └── App/      # Dashboard, Explorar, Regiões, Alertas
+├── styles/       # Variáveis CSS e tema global
+├── types/        # Tipos TypeScript
+└── utils/        # Utilitários
+```
+
+---
+
+## 🔗 Links
+
+- **Deploy (Frontend):** https://orbitasafe.vercel.app
+- **API (Backend):** https://api-orbitasafe.onrender.com
+- **Repositório Backend:** https://github.com/DiegoCPaulino/API-OrbitaSafe
+
+---
+
+## 👥 Equipe — 1TDSPR
+
+| Nome | RM | GitHub | LinkedIn |
+|---|---|---|---|
+| Guilherme Dabul | 559901 | [@guidabuul](https://github.com/guidabuul) | [LinkedIn](https://www.linkedin.com/in/guilhermedabul/) |
+| Diego Paulino | 566841 | [@DiegoCPaulino](https://github.com/DiegoCPaulino) | [LinkedIn](https://www.linkedin.com/in/diego-paulino-9bb31b36a/) |
+| Renan Lima | — | — | — |
+| Ryan Mazali | 567168 | [@ryanmazali](https://github.com/ryanmazali) | [LinkedIn](https://linkedin.com/in/ryanmazali/) |
+
+---
+
+## 📐 Padrões do Projeto
+
+- **Mobile First** — breakpoints: 480px (mobile), 768px (tablet), 1280px (desktop)
+- **Dark Mode** — paleta azul escuro + âmbar
+- **Sem bibliotecas de UI** — 100% Tailwind CSS customizado
+- **Fetch nativo** — sem Axios
+- **Autenticação** — sessionStorage (sem JWT)
+
+---
+
+## 📄 Licença
+
+Projeto acadêmico — FIAP Global Solution 2026/1.
+
+---
+
+*OrbitaSafe · Orbit Analytics · FIAP · 1TDSPR · 2026*
