@@ -117,7 +117,7 @@ src/
 |---|---|---|---|---|
 | Guilherme Dabul | 559901 | 1TDSPR | [@guidabuul](https://github.com/guidabuul) | [LinkedIn](https://www.linkedin.com/in/guilhermedabul/) |
 | Diego Paulino | 566841 | 1TDSPR | [@DiegoCPaulino](https://github.com/DiegoCPaulino) | [LinkedIn](https://www.linkedin.com/in/diego-paulino-9bb31b36a/) |
-| Renan Lima | — | 1TDSPR | — | — |
+| Renan Lima | 568321 | 1TDSPR | [@renanlimahub](https://github.com/renanlima-hub) | [LinkedIn](https://www.linkedin.com/in/renanlimasantos/) |
 | Ryan Mazali | 567168 | 1TDSPR | [@ryanmazali](https://github.com/ryanmazali) | [LinkedIn](https://linkedin.com/in/ryanmazali/) |
 
 ---
@@ -139,6 +139,7 @@ Dúvidas ou sugestões sobre o projeto? Entre em contato com a equipe:
 - **Ryan Mazali** — [LinkedIn](https://linkedin.com/in/ryanmazali/) · [@ryanmazali](https://github.com/ryanmazali)
 - **Diego Paulino** — [LinkedIn](https://www.linkedin.com/in/diego-paulino-9bb31b36a/) · [@DiegoCPaulino](https://github.com/DiegoCPaulino)
 - **Guilherme Dabul** — [LinkedIn](https://www.linkedin.com/in/guilhermedabul/) · [@guidabuul](https://github.com/guidabuul)
+- **Rena Lima** — [LinkedIn](https://www.linkedin.com/in/renanlimasantos/) · [@renanlimahub](https://github.com/renanlima-hub)
 
 ---
 

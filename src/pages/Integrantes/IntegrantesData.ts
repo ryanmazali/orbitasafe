@@ -1,6 +1,7 @@
 import fotoGuilherme from "../../assets/foto-guilherme.jpg";
 import fotoDiego from "../../assets/foto-diego.jpg";
 import fotoRyan from "../../assets/foto-ryan.jpeg";
+import fotoRenan from "../../assets/foto-renan.jpeg"
 
 export interface Integrante {
     id: string;
@@ -39,7 +40,7 @@ export const integrantes: Integrante[] = [
         nome: "Renan Lima",
         rm: "",
         turma: "1TDSPR",
-        foto: "",
+        foto: fotoRenan,
         github: "",
         linkedin: "",
         descricao: "Desenvolvedor responsável pelos modelos de inteligência artificial e análise de dados climáticos.",
