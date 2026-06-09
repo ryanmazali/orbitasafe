@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { PlusCircle, RefreshCw, ChevronRight, MapPin, Trash2 } from "lucide-react";
-import earthSateliteBg from "../../../assets/earth.jpg";
+import earthSateliteBg from "../../../assets/earth-satelite.jpg";
 import { useAuth } from "../../../context/AuthContext";
 import { getRegioesByUsuario } from "../../../api/getRegioesByUsuario";
 import { getAlertasByRegiao } from "../../../api/getAlertasByRegiao";
@@ -45,8 +45,11 @@ function Dashboard() {
         setErro("");
         try {
             const lista = await getRegioesByUsuario(usuario.idUsu);
+            const temporarias = lista.filter((r) => r.nmReg.startsWith("Consulta Rápida -"));
+            await Promise.all(temporarias.map((r) => deleteRegiao(r.idReg).catch(() => {})));
+            const listaFiltrada = lista.filter((r) => !r.nmReg.startsWith("Consulta Rápida -"));
             const comAlertas = await Promise.all(
-                lista.map(async (reg) => {
+                listaFiltrada.map(async (reg) => {
                     try {
                         const alertas = await getAlertasByRegiao(reg.idReg);
                         const ultimo = alertas.length > 0
