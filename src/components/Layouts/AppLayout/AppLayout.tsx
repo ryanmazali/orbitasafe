@@ -31,7 +31,7 @@ export const AppLayout = () => {
     return (
         <div
             className="flex flex-col desktop:flex-row"
-            style={{ background: "linear-gradient(135deg, var(--interface-darkest) 0%, hsla(222, 47%, 8%, 1) 60%, hsla(38, 92%, 50%, 0.04) 100%)", minHeight: "100vh" }}
+            style={{ background: "linear-gradient(135deg, var(--interface-darkest) 0%, hsla(222, 47%, 8%, 1) 60%, hsla(38, 92%, 50%, 0.08) 100%)", minHeight: "100vh" }}
         >
             {/* Sidebar — desktop */}
             <aside

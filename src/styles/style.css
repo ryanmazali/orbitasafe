@@ -14,7 +14,7 @@ body {
     font-family: var(--font-body);
     font-size: 1rem;
     font-weight: 400;
-    background-color: var(--interface-darkest);
+    background-color: transparent;
     color: var(--text-darkest);
     min-height: 100vh;
     display: flex;
