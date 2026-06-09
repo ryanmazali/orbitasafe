@@ -101,11 +101,11 @@ src/
 
 | Landing Page | Dashboard | Explorar |
 |---|---|---|
-| ![Home](./docs/home.png) | ![Dashboard](./docs/dashboard.png) | ![Explorar](./docs/explorar.png) |
+| ![Home](./docs/landingpage.jpg) | ![Dashboard](./docs/dashboard.jpg) | ![Explorar](./docs/explorar.jpg) |
 
 | Login | Nova Região | Alertas |
 |---|---|---|
-| ![Login](./docs/login.png) | ![Nova Região](./docs/nova-regiao.png) | ![Alertas](./docs/alertas.png) |
+| ![Login](./docs/login.jpg) | ![Nova Região](./docs/nova-regiao.jpg) | ![Alertas](./docs/alerta.jgp) |
 
 > Prints das telas em dispositivo mobile (390px)
 
