@@ -1,11 +1,14 @@
 import type { CriarRegiaoPayload, Regiao } from "../types";
 
-export async function postRegiao(payload: CriarRegiaoPayload): Promise<Regiao> {
+type PostRegiaoInput = Omit<CriarRegiaoPayload, "idReg">;
+
+export async function postRegiao(payload: PostRegiaoInput): Promise<Regiao> {
     try {
+        const idReg = Math.floor(100000 + Math.random() * 900000);
         const resp = await fetch(`${import.meta.env.VITE_API_URL}/regioes`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload),
+            body: JSON.stringify({ ...payload, idReg }),
         });
         if (!resp.ok) {
             const body = await resp.json().catch(() => null);

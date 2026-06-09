@@ -42,9 +42,7 @@ function NovaRegiao() {
         setErro("");
         setLoading(true);
         try {
-            const idReg = Date.now();
             const regiao = await postRegiao({
-                idReg,
                 nmReg: nome,
                 fkUsuarioIdUsu: usuario.idUsu,
                 fkSubprefeituraIdSubpref: Number(idSubpref),
