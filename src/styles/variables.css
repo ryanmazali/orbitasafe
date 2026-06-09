@@ -1,9 +1,37 @@
+@theme {
+    --breakpoint-mobile: 480px;
+    --breakpoint-tablet: 768px;
+    --breakpoint-desktop: 1280px;
+
+    --font-display: "Orbitron", sans-serif;
+    --font-body: "Inter", sans-serif;
+
+    --color-brand-primary: var(--brand-primary);
+    --color-brand-primary-light: var(--brand-primary-light);
+    --color-interface-darkest: var(--interface-darkest);
+    --color-interface-dark: var(--interface-dark);
+    --color-interface-base: var(--interface-base);
+    --color-interface-light: var(--interface-light);
+    --color-interface-border: var(--interface-border);
+    --color-interface-disabled: var(--interface-disabled);
+    --color-interface-shadow: var(--interface-shadow);
+    --color-interface-info: var(--interface-info);
+    --color-interface-success: var(--interface-success);
+    --color-interface-warning: var(--interface-warning);
+    --color-interface-error: var(--interface-error);
+    --color-typography-darkest: var(--interface-text-darkest);
+    --color-typography-dark: var(--interface-text-dark);
+    --color-typography-base: var(--interface-text-base);
+    --color-typography-light: var(--interface-text-light);
+    --color-common-light: var(--common-light);
+    --color-common-dark: var(--common-dark);
+    --color-mix-primary-dark: color-mix(in srgb, var(--brand-primary), var(--interface-darkest) 10%);
+}
+
 :root {
-    /* Brand */
     --brand-primary: hsla(38, 92%, 50%, 1);
     --brand-primary-light: hsla(38, 92%, 50%, 0.1);
 
-    /* Interface */
     --interface-darkest: hsla(222, 47%, 6%, 1);
     --interface-dark: hsla(222, 40%, 10%, 1);
     --interface-base: hsla(222, 35%, 16%, 1);
@@ -18,7 +46,6 @@
     --interface-warning: hsla(38, 92%, 50%, 1);
     --interface-error: hsla(0, 72%, 55%, 1);
 
-    /* Texto */
     --text-darkest: hsla(210, 40%, 98%, 1);
     --text-dark: hsla(210, 30%, 88%, 1);
     --text-base: hsla(210, 20%, 65%, 1);
@@ -32,13 +59,12 @@
     --common-light: hsla(222, 40%, 12%, 1);
     --common-dark: hsla(210, 40%, 98%, 1);
 
-    /* Spacing */
-    --spacing-2xlarge: 2rem;     /* 32px */
-    --spacing-xlarge: 1.5rem;    /* 24px */
-    --spacing-large: 1.25rem;    /* 20px */
-    --spacing-medium: 1.125rem;  /* 18px */
-    --spacing-base: 1rem;        /* 16px */
-    --spacing-small: .875rem;    /* 14px */
-    --spacing-xsmall: .75rem;    /* 12px */
-    --spacing-2xsmall: .625rem;  /* 10px */
+    --spacing-2xlarge: 2rem;
+    --spacing-xlarge: 1.5rem;
+    --spacing-large: 1.25rem;
+    --spacing-medium: 1.125rem;
+    --spacing-base: 1rem;
+    --spacing-small: .875rem;
+    --spacing-xsmall: .75rem;
+    --spacing-2xsmall: .625rem;
 }

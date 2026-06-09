@@ -1,5 +1,4 @@
 @import "./variables.css";
-@import "./theme.css";
 @import "tailwindcss";
 
 * {
@@ -12,11 +11,14 @@ html {
 }
 
 body {
-    line-height: 1.25;
     font-family: var(--font-body);
+    font-size: 1rem;
     font-weight: 400;
     background-color: var(--interface-darkest);
     color: var(--text-darkest);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 img {
@@ -28,15 +30,6 @@ img {
     width: 90%;
 }
 
-::-webkit-scrollbar {
-    width: 6px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--interface-dark);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--brand-primary);
-    border-radius: 3px;
-}
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--interface-dark); }
+::-webkit-scrollbar-thumb { background: var(--brand-primary); border-radius: 3px; }
