@@ -3,10 +3,11 @@ import type { CadastroPayload, UsuarioResposta } from "../types";
 export async function postAuthCadastro(payload: CadastroPayload): Promise<UsuarioResposta> {
     try {
         const idUsu = Math.floor(10000 + Math.random() * 89999);
+        const dtCadastro = new Date().toISOString().split("T")[0];
         const resp = await fetch(`${import.meta.env.VITE_API_URL}/auth/cadastro`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ ...payload, idUsu }),
+            body: JSON.stringify({ ...payload, idUsu, tpUsu: "USER", dtCadastro }),
         });
         if (!resp.ok) {
             const body = await resp.json().catch(() => null);
