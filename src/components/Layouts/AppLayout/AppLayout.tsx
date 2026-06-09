@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { NavLink, Outlet, useNavigate } from "react-router";
-import { LayoutDashboard, MapPin, Bell, LogOut, PlusCircle } from "lucide-react";
+import { LayoutDashboard, Bell, LogOut, Compass } from "lucide-react";
 import { Logo } from "../../Logo/Logo";
 import { useAuth } from "../../../context/AuthContext";
 import { getNotificacoesNaoLidas } from "../../../api/getNotificacoesByUsuario";
 
 const sideLinks = [
     { to: "/app", label: "Dashboard", icon: <LayoutDashboard size={20} /> },
-    { to: "/app/regioes/nova", label: "Nova Região", icon: <PlusCircle size={20} /> },
+    { to: "/app/explorar", label: "Explorar", icon: <Compass size={20} /> },
     { to: "/app/alertas", label: "Alertas", icon: <Bell size={20} /> },
 ];
 
@@ -140,15 +140,15 @@ export const AppLayout = () => {
                 </NavLink>
 
                 <NavLink
-                    to="/app/regioes/nova"
+                    to="/app/explorar"
                     className={({ isActive }) =>
                         `flex flex-col items-center gap-1 px-4 py-2 no-underline text-xs font-medium transition-colors duration-200 ${
                             isActive ? "text-[var(--brand-primary)]" : "text-[var(--text-base)]"
                         }`
                     }
                 >
-                    <PlusCircle size={22} />
-                    Nova
+                    <Compass size={22} />
+                    Explorar
                 </NavLink>
 
                 <NavLink

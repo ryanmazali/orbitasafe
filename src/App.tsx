@@ -16,6 +16,7 @@ const Dashboard = lazy(() => import("./pages/App/Dashboard/Dashboard"));
 const NovaRegiao = lazy(() => import("./pages/App/Regioes/NovaRegiao/NovaRegiao"));
 const RegiaoDetalhe = lazy(() => import("./pages/App/Regioes/RegiaoDetalhe/RegiaoDetalhe"));
 const Alertas = lazy(() => import("./pages/App/Alertas/Alertas"));
+const Explorar = lazy(() => import("./pages/App/Explorar/Explorar"));
 
 function App() {
     return (
@@ -57,6 +58,7 @@ function App() {
                                 <Route path="/app/regioes/nova" element={<NovaRegiao />} />
                                 <Route path="/app/regioes/:id" element={<RegiaoDetalhe />} />
                                 <Route path="/app/alertas" element={<Alertas />} />
+                                <Route path="/app/explorar" element={<Explorar />} />
                             </Route>
                         </Route>
                     </Routes>
