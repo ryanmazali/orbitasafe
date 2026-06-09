@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Bell, CheckCheck } from "lucide-react";
-import earthSateliteBg from "../../../assets/earth.jpg";
+import earthSateliteBg from "../../../assets/earth-satelite.jpg";
 import { useAuth } from "../../../context/AuthContext";
 import { getNotificacoesByUsuario } from "../../../api/getNotificacoesByUsuario";
 import { putMarcarNotificacaoLida } from "../../../api/putMarcarNotificacaoLida";
@@ -84,6 +84,11 @@ function Alertas() {
                     </Badge>
                 )}
             </div>
+
+            {/* Texto explicativo */}
+            <p className="text-xs mb-6" style={{ color: "var(--text-light)" }}>
+                Notificações são geradas automaticamente para alertas de nível MÉDIO e ALTO.
+            </p>
 
             {/* Loading */}
             {loading && (
