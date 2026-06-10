@@ -38,11 +38,11 @@ export const integrantes: Integrante[] = [
     {
         id: "renan",
         nome: "Renan Lima",
-        rm: "",
+        rm: "568321",
         turma: "1TDSPR",
         foto: fotoRenan,
-        github: "",
-        linkedin: "",
+        github: "https://github.com/renanlima-hub",
+        linkedin: "https://www.linkedin.com/in/renanlimasantos/",
         descricao: "Desenvolvedor responsável pelos modelos de inteligência artificial e análise de dados climáticos.",
     },
     {

@@ -93,7 +93,7 @@ src/
 - **API (Backend):** https://api-orbitasafe.onrender.com
 - **Repositório Frontend:** https://github.com/ryanmazali/orbitasafe
 - **Repositório Backend:** https://github.com/DiegoCPaulino/API-OrbitaSafe
-- **Vídeo de Apresentação:** (a ser adicionado após gravação)
+- **Vídeo de Apresentação:** https://youtu.be/iZarT1gaYWI
 
 ---
 
@@ -139,7 +139,7 @@ Dúvidas ou sugestões sobre o projeto? Entre em contato com a equipe:
 - **Ryan Mazali** — [LinkedIn](https://linkedin.com/in/ryanmazali/) · [@ryanmazali](https://github.com/ryanmazali)
 - **Diego Paulino** — [LinkedIn](https://www.linkedin.com/in/diego-paulino-9bb31b36a/) · [@DiegoCPaulino](https://github.com/DiegoCPaulino)
 - **Guilherme Dabul** — [LinkedIn](https://www.linkedin.com/in/guilhermedabul/) · [@guidabuul](https://github.com/guidabuul)
-- **Rena Lima** — [LinkedIn](https://www.linkedin.com/in/renanlimasantos/) · [@renanlimahub](https://github.com/renanlima-hub)
+- **Renan Lima** — [LinkedIn](https://www.linkedin.com/in/renanlimasantos/) · [@renanlimahub](https://github.com/renanlima-hub)
 
 ---
 
